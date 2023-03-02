@@ -20,18 +20,24 @@ function App() {
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
+        borderColor: "grey",
         borderWidth: 2,
       },
     ],
   });
 
   return (
-    <>
-    <BarChart chartData={userData}/>
-    <LineChart chartData={userData}/>
-    <PieChart chartData={userData}/>
-    </>
+    <div >
+      <div style={{ width: 700 }}>
+        <BarChart chartData={userData}/>
+      </div>
+      <div style={{ width: 700 }}>
+        <LineChart chartData={userData}/>
+      </div>
+      <div style={{ width: 700 }}>
+        <PieChart chartData={userData}/>
+      </div>
+    </div>
 
   )
 }
