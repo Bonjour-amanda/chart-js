@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import BarChart from './components/BarChart';
+import DoughnutChart from './components/DoughnutChart';
 import LineChart from './components/LineChart';
 import PieChart from './components/PieChart';
+import RadarChart from './components/RadarChart';
 import { dummyData } from './dummyData';
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
       <div style={{ width: 700 }}>
         <PieChart chartData={userData}/>
       </div>
+      <DoughnutChart chartData={userData}/>
+      <RadarChart chartData={userData}/>
     </div>
 
   )
