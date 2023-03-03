@@ -7,7 +7,7 @@ import RadarChart from './components/RadarChart';
 import { dummyData } from './dummyData';
 
 function App() {
-
+  
   const [userData, setUserData] = useState({
     labels: dummyData.map((data) => data.year),
     datasets: [
@@ -35,18 +35,22 @@ function App() {
   });
 
   return (
-    <div >
-      <div style={{ width: 700 }}>
+    <div>
+      <div style={{ width: 500 }}>
         <BarChart chartData={userData}/>
       </div>
-      <div style={{ width: 700 }}>
+      <div style={{ width: 500 }}>
         <LineChart chartData={userData}/>
       </div>
-      <div style={{ width: 700 }}>
+      <div style={{ width: 500 }}>
         <PieChart chartData={userData}/>
       </div>
-      <DoughnutChart chartData={userData}/>
-      <RadarChart chartData={userData}/>
+      <div style={{ width: 500 }}>
+        <DoughnutChart chartData={userData}/>
+      </div>
+      <div style={{ width: 500 }}>
+        <RadarChart chartData={userData}/>
+      </div>
     </div>
 
   )
