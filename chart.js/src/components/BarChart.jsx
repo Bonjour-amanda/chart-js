@@ -11,9 +11,25 @@ const BarChart = ({chartData})  => {
           },
           title: {
             display: true,
-            text: 'Chart.js Bar Chart',
+            text: 'Chart.js | Bar Chart',
           },
         },
+        scales: {
+            x : {
+                title: {
+                    display: true,
+                    text: 'Number of Users',
+                    color: 'red'
+                }
+            },
+            y : {
+                title: {
+                    display: true,
+                    text: 'Year Occurred',
+                    color: 'red'
+                }
+            }
+        }
       };
 
     const chartRef = useRef();
@@ -22,7 +38,7 @@ const BarChart = ({chartData})  => {
         if(getElementsAtEvent(chartRef.current, e).length > 0) {
             const dataSetIndex =  getElementsAtEvent(chartRef.current, e)[0].datasetIndex;
             const index = getElementsAtEvent(chartRef.current, e)[0].index;
-            
+
             const link = chartData.datasets[dataSetIndex].link[index];
             window.open(link, '_blank')
         }
