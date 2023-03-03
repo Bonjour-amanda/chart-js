@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Chart from 'chart.js/auto'
-import { Bar } from 'react-chartjs-2';
+import { Bar, getElementsAtEvent } from 'react-chartjs-2';
 
 const BarChart = ({chartData})  => {
     const options = {
@@ -15,30 +15,26 @@ const BarChart = ({chartData})  => {
           },
         },
       };
-      
-    //   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-      
-    //   const data = {
-    //     labels,
-    //     datasets: [
-    //       {
-    //         label: 'Dataset 1',
-    //         // data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    //         backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    //       },
-    //       {
-    //         label: 'Dataset 2',
-    //         // data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    //         backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    //       },
-    //     ],
-    //   };
+
+    const chartRef = useRef();
+
+    const onclickChart = (e) => {
+        if(getElementsAtEvent(chartRef.current, e).length > 0) {
+            const dataSetIndex =  getElementsAtEvent(chartRef.current, e)[0].datasetIndex;
+            const index = getElementsAtEvent(chartRef.current, e)[0].index;
+            
+            const link = chartData.datasets[dataSetIndex].link[index];
+            window.open(link, '_blank')
+        }
+    }
 
 
   return (
     <Bar 
-        // options={options} 
-        data={chartData} 
+        data={chartData}
+        options={options} 
+        onClick={onclickChart}
+        ref={chartRef}
     />
   );
 };

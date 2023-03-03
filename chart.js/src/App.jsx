@@ -5,7 +5,6 @@ import PieChart from './components/PieChart';
 import { dummyData } from './dummyData';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   const [userData, setUserData] = useState({
     labels: dummyData.map((data) => data.year),
@@ -22,6 +21,13 @@ function App() {
         ],
         borderColor: "grey",
         borderWidth: 2,
+        link: [
+          'https://www.chartjs.org/',
+          'https://react-chartjs-2.js.org/',
+          'https://www.chartjs.org/',
+          'https://react-chartjs-2.js.org/',
+          'https://www.chartjs.org/',
+        ]
       },
     ],
   });
