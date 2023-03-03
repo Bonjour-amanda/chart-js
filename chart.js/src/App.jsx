@@ -7,8 +7,8 @@ import RadarChart from './components/RadarChart';
 import { dummyData } from './dummyData';
 
 function App() {
-  
-  const [userData, setUserData] = useState({
+
+  const  userData = {
     labels: dummyData.map((data) => data.year),
     datasets: [
       {
@@ -32,7 +32,7 @@ function App() {
         ]
       },
     ],
-  });
+  };
 
   return (
     <div>
