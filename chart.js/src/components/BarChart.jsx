@@ -18,14 +18,14 @@ const BarChart = ({chartData})  => {
             x : {
                 title: {
                     display: true,
-                    text: 'Number of Users',
+                    text: 'Year Occurred',
                     color: 'red'
                 }
             },
             y : {
                 title: {
                     display: true,
-                    text: 'Year Occurred',
+                    text: 'Number of Users',
                     color: 'red'
                 }
             }
